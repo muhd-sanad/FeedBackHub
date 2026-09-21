@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - FeedBackHub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        FeedBack<span>Hub</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="admin-dashboard.html">Dashboard</a>
+        <a href="admin-login.html">Logout</a>
+    </nav>
+
+</header>
+
+
+<main class="dashboard-page">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <div class="badge">
+                Admin Panel
+            </div>
+
+            <h1>Feedback Dashboard</h1>
+
+            <p>
+                View student feedback and responses.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Statistics -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <div class="stat-icon">👥</div>
+
+            <div>
+
+                <p>Students</p>
+
+                <h2 id="studentCount">0</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">💬</div>
+
+            <div>
+
+                <p>Total Feedback</p>
+
+                <h2 id="feedbackCount">0</h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon">⭐</div>
+
+            <div>
+
+                <p>Average Rating</p>
+
+                <h2 id="averageRating">0.0</h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Search and Filter -->
+
+    <div class="dashboard-controls">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search student, email or feedback..."
+                oninput="searchFeedback()"
+            >
+
+        </div>
+
+
+        <div class="filter-buttons">
+
+            <button
+                class="filter active"
+                onclick="filterFeedback('All', this)"
+            >
+                All
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterFeedback('Teaching', this)"
+            >
+                Teaching
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterFeedback('Course', this)"
+            >
+                Course
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterFeedback('Facilities', this)"
+            >
+                Facilities
+            </button>
+
+            <button
+                class="filter"
+                onclick="filterFeedback('Events', this)"
+            >
+                Events
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Feedback Table -->
+
+    <div
+        class="feedback-table"
+        id="feedbackTable"
+    >
+        <!-- JavaScript will add feedback here -->
+    </div>
+
+</main>
+
+
+<!-- Feedback Modal -->
+
+<div
+    class="modal"
+    id="feedbackModal"
+>
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            onclick="closeFeedback()"
+        >
+            ×
+        </button>
+
+        <h2>Feedback Details</h2>
+
+        <div id="modalBody"></div>
+
+    </div>
+
+</div>
+
+
+<footer>
+    <p>© 2026 FeedBackHub | Admin Dashboard</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
